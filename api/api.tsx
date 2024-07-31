@@ -24,9 +24,9 @@ export async function getEmployees(): Promise<Employee[]> {
   const url = new URL(
     `${BASE_URL}/${ENDPOINT_SCHOOLS}/${TEST_SCHOOL}/${ENDPOINT_EMPLOYEES}`
   );
-  url.searchParams.set(PARAM_HAS_CLASS, "true");
+  url.searchParams.set(PARAM_HAS_CLASS, String(true));
   url.searchParams.set(PARAM_PER_PAGE, EMPLOYEE_COUNT);
-  url.searchParams.set(PARAM_INCLUDE, "classes");
+  url.searchParams.set(PARAM_INCLUDE, ENDPOINT_CLASSES);
 
   const response = await fetch(url.toString(), {
     headers: AUTH_HEADERS,

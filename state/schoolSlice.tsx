@@ -33,7 +33,7 @@ export interface School {
   selectedClassId: string | undefined;
 }
 
-const initialState: School = {
+export const initialState: School = {
   employees: [],
   classes: [],
   selectedEmployeeId: undefined,
