@@ -11,14 +11,14 @@ const PARAM_INCLUDE = "include";
 //Values hardcoded for the exercise
 const TEST_SCHOOL = "A1930499544";
 const TOKEN = "f0c4836caff1943b4aa2e99eb0d07e0afccb80bc";
-const EMPLOYEE_COUNT = "100"; //AM I skipped implementing pagination for the exercise, this gets all employees for the test school
+const EMPLOYEE_COUNT = "100"; //I skipped implementing pagination for the exercise, this gets all employees for the test school
 
 const AUTH_HEADERS = new Headers({
   Authorization: `Bearer ${TOKEN}`,
 });
 
 /**
- * @returns personal and class data for all employees of the test school
+ * @returns personal and class data for all employees at the test school
  */
 export async function getEmployees(): Promise<Employee[]> {
   const url = new URL(

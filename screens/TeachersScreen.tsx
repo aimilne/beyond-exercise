@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { FlatList, Pressable, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, StyleSheet } from "react-native";
 import { useDispatch } from "react-redux";
 import { Link } from "expo-router";
 
@@ -18,9 +18,13 @@ export default function TeachersScreen() {
   const employees = useAppSelector(selectEmployees);
 
   useEffect(() => {
-    getEmployees().then((employees) => {
-      dispatch(updateEmployees(employees));
-    });
+    getEmployees()
+      .then((employees) => {
+        dispatch(updateEmployees(employees));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
   return (
@@ -43,13 +47,3 @@ export default function TeachersScreen() {
     />
   );
 }
-
-const styles = StyleSheet.create({
-  employeeTextContainer: {
-    paddingHorizontal: 16,
-    paddingVertical: 6,
-  },
-  employeeText: {
-    fontSize: 24,
-  },
-});

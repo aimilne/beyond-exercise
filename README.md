@@ -1,6 +1,11 @@
-# Welcome to your Expo app 👋
+## Implementation Details
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+- My implementation is a list of teachers for the test school, drilling down to a list of classes for the selected teacher, drilling down to a list of students for the selected class.
+- I wanted to satisfy the "each day of the week" part of the story by displaying the day of the week above the classes on that day on the classes screen. It looks like this should be achievable by requesting lessons.period data with the classes API but the lessons data being returned for the test school is empty (as there is no data past the school year that has just ended?). I didn't find an alternative way to do this that could be done in a reasonable timescale for the exercise.
+- I've used expo as it provides a simple way to set up a working environment and the router is simple.
+- I've used RTK for state management. This is perhaps not necessary for such a small project, but any real RN project is likely to have some kind of state managment system.
+- I've written a bit of test code, to demonstrate I've thought about it :-) Its not comprehensive.
+- I've only tested on Android (I don't have a working Mac/iPhone available).
 
 ## Get started
 
@@ -15,36 +20,3 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    ```bash
     npx expo start
    ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
